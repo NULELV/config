@@ -57,15 +57,15 @@
 #define LED0_PIN             PC9
 #define LED_STRIP_PIN        PA8
 
-#define SPI1_SCK_PIN         PA5     A05
-#define SPI2_SCK_PIN         PB13    B13
-#define SPI3_SCK_PIN         PC10    C10
-#define SPI1_SDI_PIN         PA6     A06
-#define SPI2_SDI_PIN         PB14    B14
-#define SPI3_SDI_PIN         PC11    C11
-#define SPI1_SDO_PIN         PA7     A07
-#define SPI2_SDO_PIN         PB15    B15
-#define SPI3_SDO_PIN         PB2     B02
+#define SPI1_SCK_PIN         PA5
+#define SPI2_SCK_PIN         PB13
+#define SPI3_SCK_PIN         PC10
+#define SPI1_SDI_PIN         PA6
+#define SPI2_SDI_PIN         PB14
+#define SPI3_SDI_PIN         PC11
+#define SPI1_SDO_PIN         PA7
+#define SPI2_SDO_PIN         PB15
+#define SPI3_SDO_PIN         PB2
 
 #define ADC_VBAT_PIN         PC2
 #define ADC_CURR_PIN         PC3
