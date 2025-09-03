@@ -119,7 +119,7 @@
 #define GPS_UART                        SERIAL_PORT_UART4
 #endif
 
-#ifndef USE_MAG
+#ifdef USE_MAG
 #define USE_MAG_QMC5883
 #endif
 
@@ -127,7 +127,7 @@
 #define USE_LED_STRIP
 #endif
 
-#define ESC_SENSOR_UART SERIAL_PORT_USART5
+// #define ESC_SENSOR_UART SERIAL_PORT_USART5
 
 #if defined(USE_OSD_SD) && !defined(USE_OSD_HD)
 #define VTX_SMARTAUDIO_UART SERIAL_PORT_USART3
