@@ -28,6 +28,7 @@
 
 #define USE_GYRO
 #define USE_GYRO_SPI_ICM42688P
+#define GYRO_1_ALIGN CW180_DEG
 #define USE_ACC
 #define USE_ACC_SPI_ICM42688P
 #define USE_BARO
@@ -100,8 +101,11 @@
 #define SERIALRX_PROVIDER           SERIALRX_CRSF
 #define SERIALRX_UART               SERIAL_PORT_USART1
 
-#define USE_PINIOBOX
+#ifndef USE_PINIO
 #define USE_PINIO
+#define USE_PINIOBOX
+#endif
+
 #define BOX_USER1_NAME "VTX"
 #define PINIO1_BOX 40
 #define PINIO1_CONFIG 129
