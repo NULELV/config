@@ -34,7 +34,7 @@
 #define USE_BARO_DPS310
 #define USE_MAX7456
 #define USE_FLASH
-#define USE_FLASH_M25P16
+#define USE_FLASH_W25Q128FV
 
 #define MOTOR1_PIN           PB7
 #define MOTOR2_PIN           PB6
@@ -88,6 +88,8 @@
 #define USE_BARO
 #define BARO_I2C_INSTANCE           I2CDEV_1
 #define MAG_I2C_INSTANCE            I2CDEV_1
+#define FLASH_SPI_INSTANCE          SPI3
+#define GYRO_1_SPI_INSTANCE         SPI1
 
 #define DEFAULT_BLACKBOX_DEVICE     BLACKBOX_DEVICE_FLASH
 #define DEFAULT_CURRENT_METER_SOURCE CURRENT_METER_ADC
@@ -95,12 +97,11 @@
 #define DEFAULT_CURRENT_METER_SCALE 250
 #define MAX7456_SPI_INSTANCE SPI2
 
-#define SERIALRX_PROVIDER   SERIALRX_CRSF
-#define SERIALRX_UART       SERIAL_PORT_USART1
+#define SERIALRX_PROVIDER           SERIALRX_CRSF
+#define SERIALRX_UART               SERIAL_PORT_USART1
 
-#define FLASH_SPI_INSTANCE SPI3
-#define GYRO_1_SPI_INSTANCE SPI1
-
+#define USE_PINIOBOX
+#define USE_PINIO
 #define BOX_USER1_NAME "VTX"
 #define PINIO1_BOX 40
 #define PINIO1_CONFIG 129
@@ -113,4 +114,25 @@
 #define BOX_USER4_NAME "LED PIN 4"
 #define PINIO4_BOX 43
 #define PINIO4_CONFIG 129
+
+#ifdef USE_GPS
+#define GPS_UART                        SERIAL_PORT_UART4
+#endif
+
+#ifndef USE_MAG
+#define USE_MAG_QMC5883
+#endif
+
+#ifndef USE_LED_STRIP
+#define USE_LED_STRIP
+#endif
+
+#define ESC_SENSOR_UART SERIAL_PORT_USART5
+
+#if defined(USE_OSD_SD) && !defined(USE_OSD_HD)
+#define VTX_SMARTAUDIO_UART SERIAL_PORT_USART3
+#endif
+#if defined(USE_OSD_HD) && !defined(USE_OSD_SD)
+#define MSP_DISPLAYPORT_UART SERIAL_PORT_USART3
+#endif
 
